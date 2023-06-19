@@ -1,27 +1,32 @@
 # MyWorkspace
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
+A monorepo created to demonstrate intellij IDE unable to resolve `src/assets` images within inlineTemplates.  
 
-## Development server
+## To Run the app
+```shell
+npm run start:all
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+That should bring 2 apps
 
-## Code scaffolding
+### App1: 
+http://localhost:4200
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![img_1.png](docs/img_1.png)
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### App2:
+http://localhost:4201
 
-## Running unit tests
+![img.png](docs/img.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Issue:
+1. [Not working] In `libs/common`, unable to resolve assets directory within Inline Templates:
+![img_2.png](docs/img_2.png)
 
-## Running end-to-end tests
+2. [Works] In `projects/app1` is able to resolve images:
+![img_3.png](docs/img_3.png)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. [Not working]  In `projects/app2` unable to resolve assets directory within Inline Templates:
+![img_4.png](docs/img_4.png)
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
